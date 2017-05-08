@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.textinbulk.tier5.beacon">
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+    <uses-feature android:name="android.hardware.location.gps" />
+    ​
+    <permission
+        android:name="android.permission.BLUETOOTH"
+        android:label="BLUETOOTH" />
+    <permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.NoActionBar" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ChooseCartActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            >
+        </activity>
+        <activity
+            android:name=".RentingActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.LAUNCH_RENTING_ACTIVITY" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DoneActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            >
+        </activity>
+        <activity
+            android:name=".StolenActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            >
+        </activity>
+        <activity
+            android:name=".MonitorViewActivity"
+            android:label="@string/title_activity_monitor_view"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleInstance" >
+
+        </activity>
+
+        <service
+            android:name=".ServerRequestsHandler"
+            android:exported="false" >
+        </service>
+    </application>
+
+</manifest>
